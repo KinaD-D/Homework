@@ -1,20 +1,20 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'lab8/**'
+on: [push]
+  # push:
+    # branches:
+      # - main
+    # paths:
+      # - 'lab8/**'
 
 jobs:
   lab8_testing:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v1
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v1
         with:
           python-version: '3.11'
 
@@ -25,4 +25,4 @@ jobs:
       - name: Run tests
         run: pytest lab8/tests
         env:
-          PYTHONPATH: .
+          PYTHONPATH: ./lab8
