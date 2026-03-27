@@ -1,3 +1,4 @@
+from src.order_processor_facade import OrderProcessor
 #  ------ Идея и мысли -------
 #  значится в чём суть, делаю имитацию работы платёжной системы, доставки и тому подобное,
 #  а через фасад будет реализована удобная точка доступа, одна функция что обработает всё остальное
@@ -6,5 +7,10 @@
 #  ------- Конец ---------
 
 
+def main(inventory=None):
+    order_processor = OrderProcessor(inventory=inventory)
+    order_processor.place_order()
+
+
 if __name__ == '__main__':
-    pass
+    main()
